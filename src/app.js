@@ -17,6 +17,16 @@ const init = async () => {
     },
   });
 
+  //POST routes
+  server.route({
+    method: "POST",
+    path: "/signup",
+    handler: (request, h) => {
+      const payload = request.payload;
+      return payload;
+    },
+  });
+
   await server.start();
   console.log(`server is listening at ${server.info.uri}`);
 };
