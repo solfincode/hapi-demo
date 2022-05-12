@@ -21,4 +21,9 @@ const init = async () => {
   console.log(`server is listening at ${server.info.uri}`);
 };
 
+process.on("unhandledRejection", (err) => {
+  console.log(err);
+  process.exit(1);
+});
+
 init();
